@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+  }
+  
+  html.dark {
+    --bg-color: #2d3748;
+    --text-color: #e2e8f0; 
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  a {
+    color: var(--text-color);
+  }
+
+  a.relative {
+    position: relative;
+    display: inline-block;
+  }
+  
+  a.relative span {
+    display: block;
+    height: 2px;
+    width: 0;
+    background-color: currentColor;
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+  }
+  
+  a.relative:hover span,
+  a.relative.text-blue-400 span {
+    width: 100%;
+  }
+
+  .dark-mode-switch .react-toggle-track {
+    background-color: transparent !important;
+  }
+  
+  .dark-mode-switch .react-toggle-thumb {
+    background-color: transparent !important;
+  }
+  
+  .dark-mode-switch svg {
+    stroke: white !important; 
+    fill: white !important;  
+  }
+  
+  .dark-mode-switch svg circle,
+  .dark-mode-switch svg mask,
+  .dark-mode-switch svg line {
+    stroke: white !important; 
+    fill: white !important; 
+  }
+  
+  .dark-mode-switch {
+    filter: none !important;
+    color: white !important;
+  }
+  
+  .dark-mode-switch svg circle {
+    fill: white !important;
+  }
+
+
+  .cart-text {
+    color: var(--text-color); /* Use CSS variable for text color */
+  }
+  
+  .cart-icon {
+    filter: invert(1); /* Invert colors for icon */
+  }
+  
+  /* Ensure that the icon and text colors are applied correctly in dark mode */
+  html.dark .cart-text {
+    color: var(--text-color); /* White text in dark mode */
+  }
+  
+  html.dark .cart-icon {
+    filter: invert(1); /* Invert icon for dark mode (white icon) */
+  }
+  
+  html:not(.dark) .cart-text {
+    color: var(--text-color); /* Black text in light mode */
+  }
+  
+  html:not(.dark) .cart-icon {
+    filter: none; /* Normal icon color in light mode (black) */
+  }
+  
+  body.light-mode::-webkit-scrollbar-track {
+    background: #F3F4F6; /* White scroll button */
+  }
+
+  body.dark-mode::-webkit-scrollbar-track {
+    background: #111827;
+  }
+
+  body::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #6e6e6e;
+    border-radius: 5px;
+  }
+
+
+  @keyframes zoomIn {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+  
+  @keyframes textGrow {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Apply animations */
+  .group:hover .bg-cover {
+    transform: scale(1.05);
+    transition: transform 0.45s ease-in-out; /* Smooth and slower zoom effect */
+  }
+  
+  .group:hover .event-info {
+    transform: scale(1.05);
+  }
+
+  .price-line {
+    border-top: 1px solid #ffffff; 
+    margin: 0 auto; /* Center the line */
+  }
+
+  .carousel-container {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure image fits within container */
+  }
